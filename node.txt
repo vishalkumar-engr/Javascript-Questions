@@ -1,1 +1,37 @@
-N
+1. What is Node js and Architecture?
+=> Node is cross-platform and Javascript run-time enviroment.
+=> It is built on Google Chrome’s V8 JavaScript engine
+=> Architecture => To manage several concurrent clients => Node.js employs a “Single Threaded Event Loop” design.
+=> Components of the Node.js Architecture:
+a. Requests => User need to perform some action => 2 types of request => Blocking (complex) and Non-blocking (Simple)
+b. NodeJs Server => Server accept all request => Process them => Return results
+c. Event Queue => Storing requests => Pass them to the Event loop
+d. Event loop => Recieve requests => send response to the client
+e. Thread pool => Contain thread => Perform Operation 
+=> For blocking requests, a single thread is assigned to the process for completing the task by using external resources.
+
+2. What is the structure for Node js?
+
+=> app.js
+=> src => connections => MongoDB => connection.js
+       => routes => routes.js
+                 => user-routes.js
+       => models => user-model.js
+       => middlewares => custom-middlewares.js
+       => controllers => user-controllers.js
+       => services => authentication.js
+       => validation => index.js
+                     => schema.js
+
+3. What is middleware and example?
+=> middleware is a function 
+=> In request and response cycle 
+=> that function have access of request 
+=> responading the object as well as pass to the next middleware
+=> example => HTTP, static (pass image or html), JSON , urlencoded
+=> custum middleware => Autherization, Authentication, Validation etc
+=> Code
+  const customMiddleware = (req,res,next)=>{
+    // manipulation accordingly
+    next()
+}
