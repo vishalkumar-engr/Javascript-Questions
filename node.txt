@@ -55,3 +55,18 @@ e. Thread pool => Contain thread => Perform Operation
 => Provide logger for all instance at same time
 => production process manager with in build load balancer
 => Zero downtime reload
+
+7. Why do we use Logger?
+=> Debugging and troubleshooting
+=> Montering and Performance tuning
+=> Error reporting and Alerting 
+=> Security check-up
+
+8. Tools for logger => PM2, winston
+
+9. Level of Logger 
+=> Info => General Info
+=> WARN => Potential issue
+=> Error => Functionality error
+=> Debug => Debugging Information
+=> Fatal => Crictical error that terminate application
