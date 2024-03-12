@@ -35,3 +35,23 @@ e. Thread pool => Contain thread => Perform Operation
     // manipulation accordingly
     next()
 }
+
+4. Optimize nodeJs API
+=> Always use of asynchronous functions
+=> Optimize Database queries
+=> Clustering => with pm2
+=> Used HTTP2 instaead of HTTP (Multiplexing, Header compression, Server push, Binary Format)
+=> Run tasks in Parallel => reduce letency and minimizes blocking opertaions.
+=> Use Redis to catch 
+=> Avoid session and cookies in APIs and send only APIs data
+=> Use Error scripting with logging
+
+5. Clustering 
+=> Cluster allow to create multiple parallel instance of server or Scalling.
+
+6. PM2
+=> APM => Application process manager
+=> performance monitering manager (CPU, Memory usage, response time, event loop letency etc)
+=> Provide logger for all instance at same time
+=> production process manager with in build load balancer
+=> Zero downtime reload
