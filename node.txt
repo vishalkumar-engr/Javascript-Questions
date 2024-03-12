@@ -78,3 +78,7 @@ e. Thread pool => Contain thread => Perform Operation
 => Pre-flight => called before APIs => sent domain => return server additionally header to API's => main API's will called
 => example => web => if http:vishal.in
            => Not allowed => google.com, api.vishal.in, akshay.in, => Not allowed
+
+11. Rate Limiting
+=> For Rate limiting we can configure multiple package for that
+=> express-rate-limit, rate-limiter-flexible, express-rate-limit-redis
