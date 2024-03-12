@@ -80,5 +80,15 @@ e. Thread pool => Contain thread => Perform Operation
            => Not allowed => google.com, api.vishal.in, akshay.in, => Not allowed
 
 11. Rate Limiting
+=> handle DOS attack (Denial of service) => where high volume of traffic.
 => For Rate limiting we can configure multiple package for that
-=> express-rate-limit, rate-limiter-flexible, express-rate-limit-redis
+=> express-rate-limit, rate-limiter-flexible, express-rate-limit-redis.
+
+12. Security
+=> Regular security audits and testing
+=> Impliment Rate limit and IP whitelisting
+=> Secure Session management
+=> Enabled HTTPS
+=> Prevent Injection Attack => use ORMs
+=> Use JWT and Auth0 for Autherization and Authentication
+=> Keep dependencies update
