@@ -109,4 +109,40 @@
 => Store intialization => Dispatching => Reducer => subscribe Selector => Render
 => Connfigure with the help of app store and useReducer and useSelector
 
+15. Custom Hooks
+=> Clean, maintable, Readable, re-usable
+16. lazy Loading
+=> code splitting, Chunking, suspense
+17. Virtual Dom
+=> Re-concilation algorithm, React Fiber, React Render, Diff Algorithm
+18. SSR vs CSR
+=> diffrence, SEO, performance
+19. Routing (RBAC) => Role based access controller
+=> React router, Protected route, query params, dynamic routing
+20. Testing
+=> React testing (Unit testing)
+=> Cypress (E2E testing)
+21. Async task
+=> Api calls, events, fetch, Promises
+22. Re-usability/modularity/testability/readable
+23. Performance
+lazy Loading
+assest optimization
+Js code
+css code
+bundler level
+seo => halmet seo
+=> add meta tag
+=> graph tags
+=> twitter tag
+=> mobile responsive
+=> ssl certificate
+=> image optimization
+=> Increase performance
+=> 404 error page
 
+24. Styling
+tailwind.css
+style-x
+
+25. Security
