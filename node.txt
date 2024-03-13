@@ -92,3 +92,22 @@ e. Thread pool => Contain thread => Perform Operation
 => Prevent Injection Attack => use ORMs
 => Use JWT and Auth0 for Autherization and Authentication
 => Keep dependencies update
+
+13. Api Code
+=> Sucessfully (Most used)
+=> Get => 200
+=> Post => 201 => Created
+=> Put => 200
+=> Patch => 200
+         => 204 => No Content
+=> Delete => 204
+
+=> Error
+=> 404 => Not Found
+=> 400 => Bad Request
+=> 401 => Unauthorized
+=> 403 => Forbidden
+=> 502 => Bad gateway
+=> 504 => Gateway Timeout
+
+=> Code => res.status(200).json({ message: "Xyz });
