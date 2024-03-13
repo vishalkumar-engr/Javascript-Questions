@@ -1,1 +1,347 @@
+1. JavaScript
+=> Javascript is Loosly/weekly type language
+   e.g => var a = "Vishal"
+          a = 10
+          a = undefined
+=> Scripting language
+=> Interpreted language => Without compiling 
+=> NOT compiled => Converted into machine code
+=> Single Threaded and Sychronous
+=> data type => Premitive => String, Number, Boolean
+             => Non-premetive => Array, Object
 
+2. While Running javascript code call stack will be created
+=> Execution context => Execution context stack, Program Stack, Runtime stack, Machine Stack, controll Stack
+=> Global execution stack
+
+3. Hoisting
+=> Hoisting refer the process we can acess
+=> variable or function before initialize it!
+=> Code
+    getName()
+    console.log(x)
+    console.log(getName)
+
+    var x= 7
+    function getName(){
+      console.log("XYZ")
+    }
+
+    /* 
+    O/P 
+    "XYZ"
+    undefined
+    function {
+        console.log("xyz")
+    }
+    */
+
+4. Closure
+=> Function with their lexical enviroment
+=> uses => Currying, Momoize, Data hiding, SetTimeout, maintain state in async world
+=> Code
+    function closure(){
+    const str ="Closure"
+    return function (){
+        console.log(str)
+    }
+  }
+
+  const fn = closure()
+  fn()
+
+  O/P => Closure
+
+5. Currying Function
+=> it's a technique where multiple argument is transformed into several argument
+=> Code
+    function curryingAdd (a){
+    return function(b){
+        if(b)
+        return curryingAdd(a+b)
+        return a
+    }
+}
+
+console.log(curryingAdd(2)(2)())
+=> O/P => 4
+
+6. Scope
+=> It determine the accessbility (or visiblity) of variable
+=> Where you can access the specific variable of function
+=> Type => Global Scope => Declared globally with var, let, const
+        => Function Scope => Access of variable in functional execution context
+        => Block Scope => Acess of variable in that perticular context (Blocked scope means () => this paranthesis)
+
+7. var, let, const
+=> all are used to initialize the variable
+=> var => store in global execution context
+=> let,const => Store in diffrent memory NOT IN THE WINDOWS
+             => We can't access the variable before initialize it ( because of TEMPORAL DEAD ZONE )
+             => Dublicate is not allowed
+             => Refrence Error / Syntax error => Temporal Dead Zone
+
+8. undefined vs NOT defined
+=> not defined => variable is not availabe in this window or this execution context
+=> undefined => variable is defined but value is not assigned.
+
+9. Call, Bind, Apply
+=> Call => Call method of function instance
+        => call function with given this value and argument
+        => passing this to the parent function
+        => Pointed parent (this)
+=> Bind => same as call only difference is it return function
+=> Apply => same as call but take argument as form of Araay
+=> call(this,"xyz") => we can pass additionally arguments
+=> apply(this,["a","b"]
+=> Code
+    const obj ={
+        first:"John",
+        last:"deo",
+        printName: function(){
+            const {first,last} = this
+            console.log(first+" "+last)
+        }
+    }
+
+    const printFirstName = function(){
+        console.log(this.first)
+    }
+
+    printFirstName.call(obj)
+
+    const obj2 = {
+        first:"Jodha",
+        last:"Akbar"
+    }
+
+    obj.printName(obj2)
+
+    /*
+    Output
+    John
+    Jodha Akbar
+    */
+
+10. Polyfill
+=> A polyfill is a piece of code used to provide modern functionallity on older browser (That's not supportive)
+=> Code => Custom bind
+=>     Function.prototype.bind_1 = function(...args){
+        const obj = this
+        const params = args.slice(1)
+        return function(...args_1){
+            obj.apply([args[0],[...params,...args_1]])
+        }
+    }
+
+11. Prototype ( __proto__ )
+=> It's mechanishm by which JAVASCRIPT object inherits features from one to another.
+=> while creating variable or function JAVASCRIPT automatically added inbuild prototype in it.
+=> const arr = [1,2,3,4,5] => arr.__proto__.__proto__ => Object
+=> function xyz(){} => arr.__proto__.__proto__ => Object
+=> e.g 
+    Array.prototype.Ucase = function(){
+        const arr = this
+        return arr.map((item)=>item.toUpperCase())
+    }
+
+12. Type coericion 
+=> Automatically conversion of value from one data type to another data type
+=> e.g => "str"+42 => OUTPUT => str42 => Number to string
+
+13. IIFE (Immidiatly invoked function expression)
+=> e.g 
+    (function xyz(){
+            console.log("xyz")
+        }
+    )()
+
+14. TOP ES6 Features
+=> Arrow Function
+=> let, const
+=> Template Literals => (`${variable}`)
+=> Destructuring assignment => const {xyz,abc} = obj => const [a,b] = [10,20,30]
+=> Rest and Spread operators
+=> Promises / Async / await
+=> classes
+=> Higher order functions
+
+15. Arrow Function
+=> Arrow function is declartion type of function in javascript
+=> Diffrence b/w Regular and Arrow function
+    => Arrow function have lexical this compared to regular function
+    => Arrow function's this pointed to lexical enviroment this.
+    => We can't create constructor using arrow function
+    => Argument we can access in the regular function but In arrow function we can achieve it with the help of spread operator.
+    => Regular function is hoisted but NOT ARROW FUNCTION.
+=> e.g
+    const obj = {
+        a:10,
+        fn:function(){
+            console.log(this)
+        },
+        fn_1 : ()=>{
+            console.log(this)
+        },
+        fn_2 : function(){
+            console.log(this)
+            const xyz = ()=>{
+                console.log(this)
+            }
+            xyz()
+        }
+    }
+
+    obj.fn()
+    obj.fn_1()
+    obj.fn_2()
+
+    /*
+    OUTPUT
+    obj
+    window
+    obj
+    obj
+    */
+
+15. Rest and Spread Operator
+=> For OBJECT
+=>  const obj = {
+        first:"JOHN",
+        last:"DEO"
+    }
+
+    // Rest
+    const {...rest} = obj
+    console.log(rest)
+
+    //spread
+    const updatedObj = {
+        ...obj,
+        home:"Pune"
+    }
+
+=> For Array
+=>  function xyz (a,b,...other){
+        // Rest
+        console.log(other)
+    }
+
+    const x = [1,2,3,4,5]
+
+    // spread 
+    xyz(1,2,...x)
+
+16. Promise
+=> Promise is use to handle asynchronous call
+=> promise is object respresenting the eventual completion of async operation.
+=> IN EASY WAY => promise is container for future value
+=> State => Pending => Still in Process
+         => Fullfilled => Resolve successfully and return a value
+         => Rejected => failed with error
+=> e.g
+=> with try and catch
+    const handlePromise = async ()=>{
+        try{
+            const data = await P1 // Promise
+            const value = await data.JSON()
+            console.log(value)
+        }catch(err){
+            throw err
+        }
+    }
+=> With .then and .catch
+    P1.then((result)=>{
+        console.log(result)
+    }).catch((err)=>{
+        console.log(err)
+    })
+
+17. Promise API's
+=> Promise.all => Take array of promise and return results in the form of array => if one of promises get rejected => Promise.all gets rejected
+=> Promise.allSettled => Take array of promises and return results in the form of array => return value without care of error (it return error that perticular promise)
+=> Promise.race => Return first promise that came fast => without care of error.
+=> Promise.any => Return first promise that came first => but fullfilled promise.
+
+18. Async/Await
+=> it's makes easy to write promise
+=> it's actually make a function wait for promises
+=> Async => Async make normal function that return promise
+=> await => Await make function wait till that function get resolved
+=> e.g
+    const p1 = Promise.resolve("P1 resolve")
+    const p2 = new Promise((res,rej)=>{
+        const value = 5
+        if(value>4){
+            setTimeout(()=>{
+                res("P2 Resolved")
+            },2000)
+        }else{
+            rej("P2 Rejected")
+        }
+    })
+
+    const handlePromise = async ()=>{
+        console.log("Start")
+        const data = await p1
+        console.log(data)
+        const data_2 = await p2
+        console.log(data_2)
+        console.log("End")
+    }
+
+    handlePromise()
+
+19. Higher Order function
+=> Function that take one or more function as arguments and as in return their results
+=> forEach => for itiration the Array
+=> map => apply something on every element and return new array
+=> filter => Filter as we required and return new array
+=> Reduce => For getting sum of array
+=> find => it work as filter but return only first value
+
+20. Deep copy and shallow copy
+=> Deep Copy => const deepCopy = JSON.parse(JSON.stringify(obj))
+             => All level of object get copied
+             => Function is NOT COPIED IN ALL LEVEL
+=> Shallow copy => const shallowCopy = {...obj}
+                => Only first level of object get copied
+
+21. Debounce Concept
+=> Time consuming task DO NOT FIRE OFTEN
+=> used to increase performance
+=> Used in Search engine, lazy loading, call any api event on scroll
+=> code 
+    const debounce = function(callback,waitingTime){
+        let timer
+        return function(){
+            let args = arguments
+            clearTimeout(timer)
+            timer = setTimeout(()=>{
+                callback.apply(this,args)
+            },waitingTime)
+        }
+    }
+
+    const fn = debounce(getData,4000)
+
+22. Throttling Concept
+=> Rate limiting the function invoking and execution
+=> use => on click on button api called
+=> code
+    const throttle = function (callback, waitingTime) {
+      let flag = true;
+      return function () {
+        let args = arguments;
+        if (flag) {
+          callback.apply(this, args);
+          clearTimeout(timer);
+          flag = false;
+          timer = setTimeout(() => {
+            flag = true;
+          }, waitingTime);
+        }
+      };
+    };
+
+    const fn = throttle(getData, 4000);
