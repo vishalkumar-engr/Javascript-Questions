@@ -65,3 +65,48 @@
 
     => Above both is same but browser didn't uderstand this only understand ECMASCRIPT
     => Above both return React object.
+=> Before going to browser => Bundler transpiled 
+=> All the bundlers are transpiled with the help of BABEL
+
+9. Babel
+=> Babel is javascript compiler as well as transpiler 
+=> take jsx and converted into js engine understood language as well as react understood
+=> Babel understand with the help of angular bracket (<,>)
+
+10. Componets
+=> Components are self contained reusable code
+=> type => Class component => there own lifecycle 
+                           => constructor, ComponentDidMount, ComponentDidUpdate, ComponentDidUnmount 
+                           => for state management => this.state and this.setstate
+        => functional component => No lifycle 
+                                => we can achieve it with the help of react hooks 
+                                => useState, UseEffect
+
+11. useEffect
+=> useEffect(()=>{},[]) => call initially as componentDidMount
+=> useEffect(()=>,{},[xyz]) => call callback function when previous xyz and current have some changes
+
+12. Hooks
+=> useState => For managing state
+=> useEffect => trigerring for some call back function
+=> useContext => getting details for context
+=> useReducer => updating resux state using actions
+=> useSelector => Getting all details from store
+=> useParams => getting details of params of route
+=> useRefs => element refs
+=> useMemo => for memoization
+=> useCallback => return a memoize function
+
+13. State management
+=> State/props => handling component using own state and handle child component from parent using props
+=> props drilling
+=> context API => for overcome props drilling
+=> data sharing between two siblings => using context api
+
+14. State management tools
+=> Redux/Zusland => Redux toolkit
+=> It provides a centralized store to manage the entire state of an application.
+=> Store intialization => Dispatching => Reducer => subscribe Selector => Render
+=> Connfigure with the help of app store and useReducer and useSelector
+
+
