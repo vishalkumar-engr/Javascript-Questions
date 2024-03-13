@@ -1,0 +1,67 @@
+1. React
+=> React is front-end javascript library
+=> it follow component based approach which help in building reusable UI component
+=> It uses virtual dom instead of Real dom
+=> it follow uni-directional data flow
+=> React is libarary NOT FRAMEWORK so, we can easily intigrate with any framework like ANGULAR, VUE etc
+
+=> we can configure it with the use of CDM LINKS
+  => Import 2 files => React development js => Core of react
+                    => React Dom => using this we can render our source code on web-site as well as on mobile application (like React native)
+
+=> Code
+  <div id="root"></div>
+  <script>
+      const heading = React.createElement("h1",{},"HELLO WORLD")
+      const root = ReactDom.createRoot(document.getElementById("root"));
+      root.render(heading)
+  </script>
+
+=> root reder is helping to convert react object to understandable by browser code
+=> Most costly operation in front-end or enhancing the user experience is updating DOM.
+=> React working on the concept to manipulate the DOM using javascript.
+
+2. NPM (Node package manager)
+=> package.json => configuration of npm
+                => dependency package
+                => npm take care of version of package
+=> package-lock.json => keep track of exact version of every package
+                     => save version of our dependencies package to package dependencies
+=> NOTE => above both file we have to update on git so, all the servers are on the same track
+
+3. npm vs npx
+=> npm => installing packages
+=> npx => executing the packages
+
+4. Transitive dependencies
+=> our project have some dependencies on other pakage and other package have thier own dependencies and that dependencies are transitive.
+
+5. why we need import in React?
+=> React is library so we have to import it first and it come from node-modules
+
+6. Bundler ( Best => web-pack, parcel, vite)
+=> Most important package in our project
+    => Dev-build => provide localhost or local server
+    => Local-server
+    => HMR ( HOT module replacement ) => after save update local file
+    => File watching algorithm
+    => Faster build using catching
+    => Image optimization
+    => Minification => optmize js,html,css
+    => Bundling => combine many file into single file
+    => Compressing the code => Remove spaces and all
+    => Code Spliting
+    => Tree shaking => remove unused code and files
+    => HTTPS => Provide https functionality
+    => Different build for dev as well as for production
+
+7. browser list => handle code in other browsers
+
+8. JSX => Javascipt xml 
+=> HTML like syntax
+=> JSX is made for developer to easy understand while writing the code.
+    => const heading = React.createElement("h1",{},"Hello world")
+    => const heading = <h1>Hello world</h1>
+
+    => Above both is same but browser didn't uderstand this only understand ECMASCRIPT
+    => Above both return React object.
