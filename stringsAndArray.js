@@ -16,3 +16,6 @@
 
     return maxSum
 }
+
+2. Minimize the Heights 
+// Not Completed
