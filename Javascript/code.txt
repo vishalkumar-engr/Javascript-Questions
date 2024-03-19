@@ -32,3 +32,42 @@ Array.prototype.forEachThree = function (callBack, thisContext) {
 Array.prototype.Ucase = function(){
   return this.map((item)=>item.toUpperCase())
 }
+
+4. find duplicate from array
+=>  const arr = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+    const duplicate = arr.filter((ele, index, arr) => arr.indexOf(ele) !== index);
+    console.log(duplicate);
+
+5. Find max and min from array
+=>  const arr = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+    const getMax = (arr) => {
+    return arr.reduce((prev, curr) => {
+        return prev > curr ? prev : curr;
+    });
+    };
+    console.log(getMax(arr));
+
+6. Find second largest
+=>  const arr = [1, 2, 3, 4, 5];
+    const getMax = (arr) => {
+    return arr.reduce((prev, curr) => {
+        return prev > curr ? prev : curr;
+    });
+    };
+    arr.splice(arr.indexOf(getMax(arr)), 1);
+    console.log("2nd largest", getMax(arr));
+
+7. Find Missing Value
+=>  const arr = [1, 2, 3, 4, 5, 6, 7, 9, 10, 15];
+    const getMissing = (arr) => {
+    const maxValue = Math.max(...arr);
+    const minValue = Math.min(...arr);
+    const missed = [];
+    for (let i = minValue; i < maxValue; i++) {
+        if (!arr.includes(i)) {
+        missed.push(i)
+        }
+    }
+    return missed;
+    };
+    console.log(getMissing(arr));
