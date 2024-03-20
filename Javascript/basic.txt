@@ -56,7 +56,7 @@
 => it's a technique where multiple argument is transformed into several argument
 => Code
     function curryingAdd (a){
-    return function(b){
+       return function(b){
         if(b)
         return curryingAdd(a+b)
         return a
@@ -115,7 +115,7 @@ console.log(curryingAdd(2)(2)())
         last:"Akbar"
     }
 
-    obj.printName(obj2)
+    obj.printName.call(obj2)
 
     /*
     Output
@@ -126,7 +126,7 @@ console.log(curryingAdd(2)(2)())
 10. Polyfill
 => A polyfill is a piece of code used to provide modern functionallity on older browser (That's not supportive)
 => Code => Custom bind
-=>     Function.prototype.bind_1 = function(...args){
+=>    Function.prototype.bind_1 = function(...args){
         const obj = this
         const params = args.slice(1)
         return function(...args_1){
