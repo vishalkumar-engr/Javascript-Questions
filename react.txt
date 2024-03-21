@@ -111,35 +111,81 @@
 
 15. Custom Hooks
 => Clean, maintable, Readable, re-usable
+=> name => useXyz => Add prefix use for creating custom hooks
+=> no need to return html => only required data
+=> Code 
+    function useFetch(url) {
+      return { message: "Hello world" };
+    }
+    export default useFetch;
+
 16. lazy Loading
 => code splitting, Chunking, suspense
+=> Suspense => while loading component loader will show will the help of suspense
+=> Code 
+    const LazyComponent = React.lazy(() => import("./LazyComponent"));
+    <Suspense fallback={<div>Loading...</div>}>
+      <LazyComponent />
+    </Suspense>;
+
 17. Virtual Dom
-=> Re-concilation algorithm, React Fiber, React Render, Diff Algorithm
+=> Virtual DOM is replica of Real DOM
+=> Re-concilation algorithm => that find the diffrence between real DOM vs Virtual DOM and update Real DOM with New Virtual DOM
+=> React Fiber => it's comes with React 16 with optimize reconcilation algorithm
+=> Diff Algorithm => With the help of react fiber find the diffrence between real dom vs virtual dom like git Diff
+
 18. SSR vs CSR
-=> diffrence, SEO, performance
-19. Routing (RBAC) => Role based access controller
-=> React router, Protected route, query params, dynamic routing
-20. Testing
+=> SSR => Server Side Rendering => Send HTML using after creating on SERVER
+=> CSR => Client Side Rendering => Sent Whole package of react/ Frontend application
+=> Using SSR we can achieve SEO while updating the HTML
+=> SSR ( OR NEXT.js is doing hydration before render the html) => for Better SEO
+
+19. Performance
+=> Shimmer UI
+=> Lazy Loading
+=> Asset Optimzation
+=> JS Code, Css Code
+=> Bundler level
+
+20. SEO (Search Engine optimization)
+=> Add Halmet Library
+=> Meta/Graph/twitter Tags
+=> Mobile responsive
+=> SSL Certificate
+=> 404 page
+=> Image Optimization
+
+21. Routing 
+=> With the help of react-router-dom we can achive it.
+=> (RBAC) => Role based access controller
+=> check before routing this user have access or not.
+=> query params, dynamic routing
+
+22. Async Task
+=> Api Calls
+=> Events from browser APIs
+=> fetch
+=> Promises
+=> Axios => using interceptor we can add auth key before api call
+
+22. Testing
 => React testing (Unit testing)
 => Cypress (E2E testing)
-21. Async task
-=> Api calls, events, fetch, Promises
-22. Re-usability/modularity/testability/readable
-23. Performance
-lazy Loading
-assest optimization
-Js code
-css code
-bundler level
-seo => halmet seo
-=> add meta tag
-=> graph tags
-=> twitter tag
-=> mobile responsive
-=> ssl certificate
-=> image optimization
-=> Increase performance
-=> 404 error page
+
+23. Main Piller for Front-end using React
+=> Re-usability
+=> Modularity => Folder Structure
+=> Testability
+=> Readable
+
+24. BOM (Browser Access Modal) vs DOM (Document Access modal)
+=> BOM allows JavaScript to "talk to" the browser. like FRedirect, alert
+=> document structure, style, and content
+
+25. Shawdow DOM
+=> Re-usable component => encapsulate internal structure and styling
+=> prevent Css Style leakage
+=> Simple Encapsulate DOM
 
 24. Styling
 tailwind.css
