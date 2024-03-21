@@ -345,3 +345,20 @@ console.log(curryingAdd(2)(2)())
     };
 
     const fn = throttle(getData, 4000);
+
+23. Generator functions
+=> Special type of function where we can pause/resumed during the executions.
+=> when Generator fn is called it will return an itirator object
+=> code
+    function* xyz() {
+      yield "hello";
+      yield "world";
+    }
+    const iterator = xyz();
+    console.log(iterator.next().value);
+    console.log(iterator.next().value);
+    /*
+    OUTPUT
+    hello
+    world
+    */
