@@ -111,3 +111,13 @@ e. Thread pool => Contain thread => Perform Operation
 => 504 => Gateway Timeout
 
 => Code => res.status(200).json({ message: "Xyz });
+
+14. Event Emitter
+=> use to handle custom events/modules
+=> code
+   const emitter = new EventEmitter();
+   emitter.emit('status',200,'ok')
+
+15. Algorithm
+=> salt => SHA256
+=> Jwt => HMAC => HS256/RS256
