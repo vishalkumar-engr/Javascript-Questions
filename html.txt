@@ -1,0 +1,10 @@
+1. Form oriented vs form builder
+=> Input, Select, textarea are form oriented
+=> Drag and drop libararies are form builder
+
+2. Semantic and Non-semantic tags
+=> Semantic => Read only tags => for developers => form, table, articles etc...
+=> Non-semantic tags => div, span, input etc...
+
+3. Meta tags
+=> it's use for SEO ( Search engine optimization )
