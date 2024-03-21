@@ -1,1 +1,11 @@
+1. Pseudo element
+=> special state of element => visited, hover, active, first-element
+=> :: => when we have target to element => after/before
+=> : => when we have to target class => after/brfore
 
+2. Position absolute vs relative
+=> absolute => nearest relative 
+=> relative => default position
+
+3. z-index
+=> overlapping element
