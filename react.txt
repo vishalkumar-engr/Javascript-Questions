@@ -192,3 +192,7 @@ tailwind.css
 style-x
 
 25. Security
+
+26. Redux
+=> Lifecycle => Dispatch(Action) => Reducer => Store => subscribe(Selector)
+=> Global store
