@@ -1,4 +1,4 @@
-https://github.com/sudheerj/javascript-interview-questions
+https://github.com/sudheerj/reactjs-interview-questions
 
 1. React
 => React is front-end javascript library
