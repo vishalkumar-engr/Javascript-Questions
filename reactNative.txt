@@ -1,1 +1,24 @@
-
+1. React Native - It's a framework using this we can develop Android, Android TV, iOS, macOS, tvOS, Web, and Windows apps. it is based on React.
+2. Most used React Native Component
+  1. View - we can use it as a div on the web and it comes with a layout with flexbox, style, touch handling, and accessibility controls.
+  2. Text - component for displaying text.
+  3. ScrollView and FlatList - Components that wrap the platform 
+                             - ScrollView renders all the elements at a time 
+                             - FlatList renders elements lazily
+  4. SafeAreaView - render content within the safe area boundaries of a device. example take care of notches of mobile phones.
+  5. TouchableOpacity and Button - Both are used as a button 
+                                 - TouchableOpacity allows you to handle CSS buttons as you want
+                                 - Button comes in the form of a Button with a square background with text.
+  6. ActivityIndicator - Displays a circular loading indicator. (Loader)
+  7. Image - component for displaying different types of images, including network images, static resources, temporary local images, and images from local disks.
+  8. ImageBackground
+  9. KeyboardAvoidingView - This component will automatically adjust its 
+                          - height, position, or bottom padding based on the keyboard height to remain visible while the virtual keyboard is displayed.
+  10. Pressable - Core Component wrapper that can detect various stages of press interactions on any of its defined children.
+  11. Modal - it is a basic way to present content above an enclosing view.
+  12. RefreshControl - component is used inside a ScrollView or ListView to add pull to refresh functionality. 
+                     - When the ScrollView is at scrollY: 0, swiping down triggers an onRefresh event.
+  13. StatusBar - Component to control the app's status bar.
+  14. TextInput
+  15. SectionList
+  16. VirtualizedList
