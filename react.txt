@@ -232,3 +232,6 @@ style-x
         console.log("Component unmounted");
       };
     }, []);
+
+29. Why React need key while rendering the items?
+=> Keys give elements to stable identity that React uses to update, delete or add elements.
