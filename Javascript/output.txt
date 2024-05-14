@@ -2,15 +2,53 @@
 2. console.log(typeof null) -> O/P -> object
 3. console.log({} === {}) || console.log([] === []) ==> false (Becouse of both are non-premetive data type it's passes the ref not value)
 4. const obj = {
-  first: "Vishal",
-  last: "Singh",
-  printName: function () {
-    const { first, last } = this;
-    console.log(first + last);
-  },
-};
+      first: "Vishal",
+      last: "Singh",
+      printName: function () {
+        const { first, last } = this;
+        console.log(first + last);
+      },
+    };
+    
+    let m = obj.printName;
+    m();
+    O/P -> NAN
 
-let m = obj.printName;
-m();
+5.  function foo() {
+      function bar() {
+        return 3;
+      }
+      return bar();
+      function bar() {
+        return 8;
+      }
+    }
+    alert(foo());
 
-O/P -> NAN
+  O/P => 8 ( here second function will update at the time of execution)
+
+6.  function xyz() {
+    var hoisted = "Vishal";
+    function hoisted() {
+      return "XYZ";
+    }
+    return hoisted();
+  }
+  
+  xyz();
+
+O/P => hoisted is not a function
+
+7.  const obj = {
+    name: "Vishal",
+    greet: function () {
+      console.log(`${this} and ${this.name}`);
+    },
+  };
+  
+  const obj1 = { age: 30 };
+  
+  obj1.greet = obj.greet;
+  obj1.greet();
+
+O/P => {age: 30, greet: ƒ} and undefined
