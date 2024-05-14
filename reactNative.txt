@@ -22,3 +22,6 @@
   14. TextInput
   15. SectionList
   16. VirtualizedList
+  17. Code push -> app center
+  18. React native notification -> their own notification from react native
+  19. Async storage -> NPM -> local storage
