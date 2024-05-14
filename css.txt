@@ -1,7 +1,7 @@
 1. Pseudo element
 => special state of element => visited, hover, active, first-element
 => :: => when we have target to element => after/before
-=> : => when we have to target class => after/brfore
+=> : => when we have to target class => after/before
 
 2. Position absolute vs relative
 => absolute => nearest relative 
@@ -9,3 +9,9 @@
 
 3. z-index
 => overlapping element
+
+4. Flexbox
+=> One-dimensional layout method for arranging the items in row or columns.
+
+5. Grid
+=> Intersecting set of vertical and horizontal lines.
