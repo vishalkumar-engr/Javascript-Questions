@@ -1,1 +1,39 @@
-  1. 
+1. AngularJs is a framework of javascript in which we can develop web, mobile, and desktop applications.
+
+2. Key Components
+  a. Modules -> Application can divided into logical sub-features.
+  b. Components -> Basic building blocks of Application for controlling HTML Views.
+  c. Templates -> Representation of view as HTML.
+  d. Services -> Shared components and Functions to the entire application.
+  e. MetaData ->
+
+3. Directives -> It adds behavior exiting DOM element as adding a background yellow color so we can create a directive and use it.
+  => e.g => <p myHighlight>Highlight me!</p>
+
+4. Decorators -> important for defining and configuring various application elements, 
+              -> providing an easy way to enhance the classes with additional functionality and provide metadata.
+
+5. Types of Decorators
+  -> Class Decorators -> @components and @ngModules
+  -> Property Decorators -> @Input and @Output
+  -> Parameter decorators -> @inject
+
+6. Sharing Data between two components
+  -> Parent to child 
+      -> e.g  <app-item-detail [item]="currentItem"></app-item-detail> // Parent Components 
+
+              import { Component, Input } from '@angular/core'; // Child component
+              export class ItemDetailComponent {
+                @Input() item = ''; // decorate the property with @Input()
+              }
+
+  -> Child to Parent
+    -> Child Component
+        export class ItemOutputComponent {
+        @Output() newItemEvent = new EventEmitter<string>();
+        addNewItem(value: string) {
+          this.newItemEvent.emit(value);
+        }
+      }
+    -> parent Component
+      <app-item-output (newItemEvent)="addItem($event)"></app-item-output>
