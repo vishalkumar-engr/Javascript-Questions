@@ -37,3 +37,24 @@
       }
     -> parent Component
       <app-item-output (newItemEvent)="addItem($event)"></app-item-output>
+
+7. LifeCycle Hooks
+  -> Constructor -> ngOnChanges -> ngOnInit -> ngDoCheck -> ngOnDistroy
+
+8. Data binding 
+  -> Component to DOM -> <li>Name: {{ user.name }}</li> or <input type="email" [value]="user.email">
+  -> DOM to Component -> <button (click)="logout()"></button>
+  -> Two-way binding -> allows the data to flow both ways. => <input type="email" [(ngModel)]="user.email">
+
+9. Directives
+  -> *ngIf -> <p *ngIf="user.age > 18">You are not eligible for student pass!</p>
+  -> *ngFor -> <li *ngFor="let user of users">
+                  {{ user }}
+                </li>
+10. Pipes
+  -> simple functions that use template expressions to accept data as input and transform it into a desired output.
+  -> e.g -> <p>Birthday is {{ birthday | date | uppercase}}</p>
+  -> We can create custom pipes => @Pipe({name: 'customFileSizePipe'})
+
+11. Observable 
+  -> It's promise inside angular only difference is we have to subscribe it anywhere in the application.
