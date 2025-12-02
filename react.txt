@@ -235,3 +235,5 @@ style-x
 
 29. Why React need key while rendering the items?
 => Keys give elements to stable identity that React uses to update, delete or add elements.
+
+30. If we trying to print in message on react component we will pass string, number, boolean, array but while passing the javascript object we got error because object is not accepted by react component.
