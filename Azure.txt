@@ -1,0 +1,11 @@
+1. Azure Function - Serverless computing services (run small piece of code)
+-> No need of running full application instead of write function and triggered (whenever you need and it's executed)
+-> Key feature -> Serverless, Auto scaling, pay-per-use
+
+2. Azure Bus Services - fully managed cloud messaging services
+-> Scalable and reliable.
+-> handling traffic spikes smoothly.
+-> ensure message delivery even during failures.
+
+-> key feature -> 1. Queue -> message are stored until processed (one sender -> one receiver)
+                  2. Topic and subscription -> each subscriber get one copy (One sender -> multiple receiver)
