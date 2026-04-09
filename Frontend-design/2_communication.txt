@@ -1,1 +1,96 @@
+1. Short Polling
+=> Client/Browser keep checking the server again and again at fixed interval 
+=> Do you have new data??
+=> Why: Simple way to check for updates before real-time solutions existed.
+=> Problem it caused: Too many unnecessary requests → server overload.
+=> Real-life example: Refreshing email inbox every 10 seconds.
+=> Use Case - Non-urgent updates.
+// Code
+setInterval(() => {
+    fetch('/data')
+        .then(res => res.json())
+        .then(data => console.log(data));
+}, 5000);
 
+2. Long Polling
+=> Client sends a request and waits until server has new data.
+=> Send request once, server responds only when new data is available, then repeat.
+=> Why: Reduce repeated requests of short polling.
+=> Problem solved: Avoids sending unnecessary requests repeatedly.
+=> Problem it caused: Connection closes after each response → need reconnect → slight delay.
+=> Real-life example: “Call me when you reach home” → you wait instead of asking repeatedly.
+=> Use case: Updates are random but need near real-time.
+// Code
+function getMessages() {
+    fetch('/messages')
+        .then(res => res.json())
+        .then(data => {
+            console.log('Messages:', data);
+            getMessages(); // call again after response
+        });
+}
+getMessages();
+
+3. WebSocket
+=> Persistent two-way connection between client and server.
+=> Why: Needed for instant, full-duplex real-time communication.
+=> Problem solved: Eliminates repeated connections in long polling.
+=> Real-life example: Phone call → both people can talk anytime.
+=> Use case: Chat apps, online games, live dashboards.
+// Code
+const ws = new WebSocket('ws://example.com/socket');
+ws.onopen = () => {
+    console.log('Connected');
+    ws.send('Hello server!');
+};
+ws.onmessage = (event) => {
+    console.log('Message from server:', event.data);
+};
+
+4. Server-Sent Events (SSE)
+=> Server pushes updates automatically to client (one-way).
+=> Why: Simpler alternative to WebSocket when client → server messages are not needed.
+=> Real-life example: Live news feed updating automatically.
+=> Use case: Live feeds, notifications, stock updates.
+// Code
+JavaScript Example (Client):
+const evtSource = new EventSource('/news-stream');
+evtSource.onmessage = (event) => {
+    console.log('News:', event.data);
+};
+
+Server-side (Node.js Express SSE Example):
+app.get('/news-stream', (req, res) => {
+    res.setHeader('Content-Type', 'text/event-stream');
+    setInterval(() => {
+        res.write(`data: Breaking news at ${new Date()}\n\n`);
+    }, 5000);
+});
+
+5. Webhook
+=> Event-triggered server-to-server notification.
+=> Why: Avoid polling between servers → saves resources.
+=> Real-life example: Payment success triggers instant notification to your app. 
+  (Payment provider calls your server when a transaction succeeds.)
+=> Use case: Payment alerts, third-party API notifications.
+// Code
+app.post('/payment-webhook', (req, res) => {
+    const paymentData = req.body;
+    console.log('Payment received:', paymentData);
+    res.sendStatus(200);
+});
+
+
+- Short Polling → keep asking
+- Long Polling → ask once and wait
+- WebSocket → always connected
+- SSE → server talks, client listens
+- Webhook → server calls server when event occurs
+
+| Feature       | Direction       | Connection Type    | Real-life Example    |
+| ------------- | --------------- | ------------------ | -------------------- |
+| Short Polling | Client → Server | Repeated requests  | Refresh email        |
+| Long Polling  | Client → Server | Wait then respond  | “Call me when ready” |
+| WebSocket     | Two-way         | Persistent         | Phone call           |
+| SSE           | Server → Client | Persistent one-way | Live news feed       |
+| Webhook       | Server → Server | Event-based        | Payment notification |
