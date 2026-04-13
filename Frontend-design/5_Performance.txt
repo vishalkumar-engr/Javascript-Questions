@@ -1,1 +1,48 @@
+1. Performance
+=> Why Performance?
+    => User Experience
+    => Productivity
+    => Customer Satisfaction
+    => Operational Cost
+    => Device / Network quality -> user understanding
+=> Performance Matric
+    => Business Matrics -> Session Time / Bounce rate
+=> Measuring Performance
+=> Network Optimization
+=> Asset Optimization
+=> React Optimization
+=> Build Optimization
+=> Rendering Pattern
+
+2. Performance Monitering
+=> Core Web Vitals
+  => LCP(Largest contentful paint) => 2.5s to 4s => Loading Time
+  => FID(First Input deplay) => 100ms - 300ms => Interactivity
+  => CLS(Cumulative Layout shift) => 0.1s - 0.25s => Visual Stability
+  => INP(Interraction to next paint) => 200ms - 500ms
+
+=> Browser centric matrics
+  => Time to first byte(TTFB)
+  => Network Request
+  => DNS Resolution
+  => Connection time
+  => DOM Content Load
+  => Page Load
+
+=> User centric matric
+  => Core Web Vitals -> LCP,FID,CLS,INP
+
+3. Performace Tools
+=> During Development
+  => LightHouse
+  => Developer mode (Network tab/Performance tab)
+
+=> Simulated Data (Custom data)
+  => Webpagetest.org
+
+=> Real User Data
+  => Crux, PageSpeed, RequestMatrics
+  => clarity(Microsoft), Google analytics
+  => Sevtry
+
 
