@@ -1,1 +1,113 @@
+S → One job per class — Single Responsibility Principle (SRP)
+O → Extend without modifying — Open/Closed Principle (OCP)
+L → Subclasses must behave correctly — Liskov Substitution Principle (LSP)
+I → Small, focused interfaces — Interface Segregation Principle (ISP)
+D → Depend on abstractions, not concrete classes — Dependency Inversion Principle (DIP)
 
+1. Component Design
+=> A single component have Single responsibility
+=> YOUTUBE => Menu Bar 
+  => <ExpandedComponent />
+     <ShrinkComponent />
+
+2. Config Driven UI / Backend Driven UI / Dynamic UI
+=> Layout of website => we are achive using JSON
+=> Customizable
+=> Same Code => Multiple UI
+=> Without deployment we can achieve multiple screen of same page as used by swiggy zomato as per deals, locations etc
+
+3. Shimmer UI / Skeleton Loading UI
+=> Modern way to show loader
+=> Feels Faster load (psychologically)
+=> User feel it's almost load then user strict to page
+
+4. Routing / Protected Routes
+=> Path selection
+=> Route is one of the major pillar of SEO
+=> As browser and search engine crawlers use routes to discover
+=> for better experience => (Tried not to change) => If neccessary then re-direct but it's not recommended
+
+=> Protected routes => Always use container for Protected routes
+// Code
+// Container
+import { Navigate, Outlet } from "react-router-dom";
+const ProtectedRoute = ({ isAuthenticated }) => {
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+};
+export default ProtectedRoute;
+// Main
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoute";
+<BrowserRouter>
+  <Routes>
+    {/* Public routes */}
+    <Route path="/login" element={<Login />} />
+    {/* Protected routes */}
+    <Route element={<ProtectedRoute isAuthenticated={true} />}>
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/profile" element={<Profile />} />
+    </Route>
+  </Routes>
+</BrowserRouter>
+
+5. State Mangement
+=> Why we need State? => Dynamic Behaviour
+=> Mainly there are two layer for better understanding
+    => Data Layer
+    => UI Layer (It's Controlled by data layer)
+=> In react there is three way of state managemnt
+    => Internal State
+    => API Contest => Props Drilling
+    => Redux / Zustand / RTK (Redux tool kit)
+    => Depending on the size of website please select the state management
+
+6. Multi-Language Support
+=> Use Config driven ui for support multi language 
+
+7. Infinite scroll
+=> trigger => Avoid multiple request => use debouncing/ Throttling concept
+// Code
+useEffect(() => {
+  const handleScroll = () => {
+    if (
+      window.innerHeight + window.scrollY >= document.body.offsetHeight
+    ) {
+      loadMore();
+    }
+  };
+  window.addEventListener("scroll", handleScroll);
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
+
+8. Accordian
+=> requirement one open and all close then handled through parent
+=> Requirement => every accordian have own open and close then handled in child
+
+9. Reddit Nested Comments
+=> Use recursion 
+// Code
+const TreeItem = ({ node }) => {
+  return (
+    <div style={{ marginLeft: "20px" }}>
+      <div>📁 {node.name}</div>
+      {node.children &&
+        node.children.map((child, index) => (
+          <TreeItem key={index} node={child} />
+        ))}
+    </div>
+  );
+};
+
+10. Image slider
+// Code
+useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
+    // cleanup on unmount
+    return () => clearInterval(interval);
+  }, [images.length]);
