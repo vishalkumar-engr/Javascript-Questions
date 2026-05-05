@@ -1,0 +1,96 @@
+Database is collection of data => easy accessed
+
+=> DBMS -> Database management system => manage DB
+=> Relational (RDBMS) -> Data stored in tables
+=> Non-relational (NoSQL)
+
+=> SQL => Structured query language
+=> Query we can write in capital as well as small
+  
+=> CREATE DATABASE xyz; => create Database
+=> USE xyz; => using this database
+=> CREATE TABLE => create table
+// CREAT TABLE student(
+  id INT PRIMARY KEY,
+  name VAARCHAR(50),
+  age INT NOT NULL
+  ):
+
+=> INSERT INTO student VALUES(1,'asv',26); => insert data
+=> CHAR stores fixed-length => 0-255 byte
+=> VARCHAR(50) => stores variable-length => 0-255 byte
+=> BLOB(1000) => store binary large => 0-65535 byte
+=> INT(4 byte), TINYINT(-128,127) 2 byte, BIGINT(8 byte)
+=> BIT => can store x bit value (x -> 1-64)
+=> FLOAT -> upto 23 digits
+=> DOUBLE -> 24 to 53 digits
+=> Boolean -> 0 or 1
+=> DATE -> 1000-01-01 to 9999-12-
+=> YEAR
+=> TINYINT UNSIGNED (0 to 255)
+
+=> DDL(Data definition language) => create, alter, rename, truncate and drop
+=> DQL(Data Query language) => SELECT
+=> DML(Data manipulation language) => insert, update and delete
+=> DCL(Data control language) => grant and revoke permission to user
+=> TCL(Transaction control language) => start transaction, commit, rollback (Advanced DBMS)
+
+=> INSERT INTO student (rollno, name) VALUES (101,"abc");
+
+=> KEYS
+  => Primary key -> column or set of columns -> uniquely identifies each row -> should NOT NULL
+  => Foreign kay -> primary key of diffrent table -> multiple foreign key in table => it can be null & duplicate
+    // CREATE TABLE temp (
+        cust_id int,
+        FOREIGN KEY (cust_id) references customer(id)
+    )
+
+=> Constraints
+  -> NOT NULL -> cannot have a null value
+  -> UNIQUE -> all values in column are different
+  -> PRIMARY KEY -> unique & not null but used only for one
+  -> DEFAULT -> salary INT DEFAULT 25000
+  -> CHECK -> age INT CHECK (age >= 18 AND city="Delhi") or age INT, CONSTRAINT age_check CHECK (age >= 18) // age_check is optional
+  -> DISTINCT -> SELECT DISTINCT city FROM student;
+  -> WHERE -> SELECT col1,col2 FROM table_name WHERE conditions;
+  -> LIMIT -> SELECT * FROM student LIMIT 3;
+  -> BETWEEN, IN, NOT
+  -> ASC, DESC -> SELECT * FROM table ORDER BY city ASC -> Ascending, descending order
+  -> GROUP BY -> SELECT city, count(name) FROM student GROUP BY city;
+  -> HAVING -> it is similar to WHERE but apply on groups
+
+=> Aggregate Functions
+  -> COUNT()
+  -> MAX()
+  -> MIN()
+  -> SUM()
+  -> AVG()
+
+=> GENERAL ORDER of query
+    SELECT column(s)
+    FROM table_name
+    WHERE condition
+    GROUP BY column(s)
+    HAVING condition
+    ORDER BY column(s) ASC;
+
+=> UPDATE -> UPDATE table_name SET col1 = val1 where condition;
+=> SET SQL_SAFE_UPDATES = 0,1 => 0 we can update => 1 we can't update '
+=> Cascading => using FK child row reference parent table => ON DELETE CASCADE , ON UPDATE CASCADE
+
+=> ALTER => change the schema => add, delete, rename the column
+  ALTER TABLE table_name ADD COLUMN column_name datatype constraint;
+  ALTER TABLE table_name DROP COLUMN column_name;
+  ALTER TABLE table_name RENAME TO new_table_name;
+
+=> DROP vs TRUNCATE => DROP delete table and TRUNCATE delete table data not table
+
+
+
+
+
+
+
+
+
+
