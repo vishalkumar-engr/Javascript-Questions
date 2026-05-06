@@ -85,12 +85,17 @@ Database is collection of data => easy accessed
 
 => DROP vs TRUNCATE => DROP delete table and TRUNCATE delete table data not table
 
+=> Join is used to combine rows from two or more tables based on related column between them.
+=> Inner Join => SELECT column FROM tableA INNER JOIN tableB ON tableA.col_name = tableB.col_name;
+=> Left Join => SELECT column FROM tableA LEFT JOIN tableB ON tableA.col_name = tableB.col_name;
+=> Right Join => SELECT column FROM tableA RIGHT JOIN tableB ON tableA.col_name = tableB.col_name;
+=> Full Join => (LEFT JOIN) UNION (RIGHT JOIN) // In postgress and oracle DB have FULL JOIN or FULL OUTER JOIN.
+=> LEFT EXCLUSIVE JOIN => (LEFT JOIN) WHERE tableB.id IS NULL;
+=> RIGHT EXCLUSIVE JOIN => (RIGHT JOIN) WHERE tableA.id IS NULL;
+=> FULL EXCLUSIVE JOIN =>
+=> SELF JOIN => Join same table => SELECT column FROM table as a JOIN table as b ON a.col_name = b.diff_col_name
 
-
-
-
-
-
-
-
+=> Sub Query => SELECT column FROM table_name WHERE col_name OPERATOR (SUB query) => Operator (IN, BETWEEN, etc)
+=> Sub query is used with these => SELECT, FROM, WHERE(Used Mostly)
+=> VIEW => using view we can create virtual table as per our requirement
 
