@@ -1,3 +1,9 @@
+HTML/CSS/Javascript
+React/React native/Next
+Angular/ SQL
+Node/Mongo
+Frontend design system
+
 1. Kadane's Algorithm (Get maximun sub-array in array)
   // Given an array Arr[] of N integers. Find the contiguous sub-array(containing at least one number) which has the maximum sum and return its sum.
   const maxSubArraySum = (arr) =>{
